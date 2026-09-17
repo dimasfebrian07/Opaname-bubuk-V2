@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>Opname Bubuk Stage 1</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AREA STAGE 1</p>
+        <h1>Opname Bubuk</h1>
+        <p class="subtitle">Hitung semua bubuk sekali lihat. Ketik jumlah kantong, kg otomatis.</p>
+      </div>
+      <div class="bag-info">1 Kantong = <strong>20 kg</strong></div>
+    </section>
+
+    <section class="card meta-card">
+      <div class="field"><label for="date">Tanggal</label><input id="date" type="date" /></div>
+      <div class="field"><label for="shift">Shift</label><select id="shift"><option value="1">Shift 1</option><option value="2" selected>Shift 2</option><option value="3">Shift 3</option></select></div>
+    </section>
+
+    <div class="hint">💡 Tidak perlu pencet <b>+</b> ratusan kali. Langsung ketik jumlah kantong, misalnya <b>140</b> → otomatis <b>2.800 kg</b>.</div>
+
+    <section id="lines"></section>
+
+    <section class="card sticky-summary">
+      <div><span>Total Sementara</span><h2 id="grandTotal">0 kg</h2></div>
+      <button id="submitBtn" class="primary">✓ SUBMIT OPNAME</button>
+    </section>
+
+    <section id="savedCard" class="card saved-card hidden">
+      <div class="saved-icon">✓</div>
+      <div><strong>Opname tersimpan</strong><p id="savedInfo">-</p></div>
+    </section>
+
+    <section class="card output-card">
+      <div class="output-head"><div><h2>Format WhatsApp</h2><p>Setelah submit, teks siap dicopy ke grup.</p></div><button id="copyBtn" class="secondary">Copy</button></div>
+      <textarea id="waOutput" readonly></textarea>
+      <div class="bottom-actions"><button id="resetBtn" class="danger">Reset Input</button><button id="historyBtn" class="secondary">Riwayat Terakhir</button></div>
+      <div id="historyBox" class="history hidden"></div>
+    </section>
+  </main>
+  <div id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
